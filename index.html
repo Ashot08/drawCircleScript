@@ -6,9 +6,30 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="index.js"></script>
+    <script defer src="index.js"></script>
 </head>
 <body>
-<div id="coordinateSystem"></div>
+<style>
+    .system__wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+</style>
+<div class="system__wrapper">
+    <div>Y from London</div>
+    <div id="coordinateSystem">
+        <div class="system__item"></div>
+        <div class="system__item"></div>
+        <div class="system__item"></div>
+        <div class="system__item"></div>
+        <div class="system__item"></div>
+        <div class="system__item"></div>
+        <div class="system__item"></div>
+        <div class="system__item"></div>
+        <div class="system__item"></div>
+        <div class="system__item"></div>
+    </div>
+</div>
+
 </body>
 </html>

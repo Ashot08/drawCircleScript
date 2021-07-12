@@ -31,6 +31,17 @@ function generateCoordinates(numbers, radius){
     return coordinates;
 }
 
-// let numbers = generateNumbers(100);
+// let numbers = generateNumbers(10);
 // let coordinates = generateCoordinates(numbers, 1);
 // console.log(coordinates);
+
+let coordinateSystemDiv = document.querySelector('#coordinateSystem');
+let width = coordinateSystemDiv.offsetWidth;
+let numbers = generateNumbers(10);
+let coordinates = generateCoordinates(numbers, width/2);
+let systemItems = document.querySelector('.system__item');
+for(let i = 0; i < numbers.length; i++){
+    console.log(systemItems[i]);
+}
+
+coordinateSystemDiv.style.height = width + 'px';
