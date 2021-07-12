@@ -14,7 +14,23 @@ function getCoordinatesOnCircle(angle, radius){
     }
 }
 
-let numbers = [0.999];
+function generateNumbers(count){
+    let numbers = [];
+    for(let i = 0; i < count; i++ ){
+        let number = i/100;
+        numbers.push(number);
+    }
+    return numbers;
+}
 
+function generateCoordinates(numbers, radius){
+    const coordinates = [];
+    for(let i = 0; i < numbers.length; i++){
+        coordinates.push(getCoordinatesOnCircle(getAngle(numbers[i]), radius));
+    }
+    return coordinates;
+}
 
-console.log(getCoordinatesOnCircle(getAngle(numbers[0]), 1));
+// let numbers = generateNumbers(100);
+// let coordinates = generateCoordinates(numbers, 1);
+// console.log(coordinates);
