@@ -17,7 +17,7 @@ function getCoordinatesOnCircle(angle, radius){
 function generateNumbers(count){
     let numbers = [];
     for(let i = 0; i < count; i++ ){
-        let number = i/100;
+        let number = i/count;
         numbers.push(number);
     }
     return numbers;
@@ -31,17 +31,17 @@ function generateCoordinates(numbers, radius){
     return coordinates;
 }
 
-// let numbers = generateNumbers(10);
-// let coordinates = generateCoordinates(numbers, 1);
-// console.log(coordinates);
 
 let coordinateSystemDiv = document.querySelector('#coordinateSystem');
 let width = coordinateSystemDiv.offsetWidth;
 let numbers = generateNumbers(10);
 let coordinates = generateCoordinates(numbers, width/2);
-let systemItems = document.querySelector('.system__item');
-for(let i = 0; i < numbers.length; i++){
-    console.log(systemItems[i]);
+let systemItems = document.querySelectorAll('.system__item');
+for(let i = 0; i < systemItems.length; i++){
+    systemItems[i].style.transform = `translate(${coordinates[i].x}px, ${coordinates[i].y}px)`;
+    systemItems[i].style.right = `${width/2}px`;
+    systemItems[i].style.bottom = `${width/2}px`;
 }
+console.log(width)
 
 coordinateSystemDiv.style.height = width + 'px';
